@@ -3,6 +3,7 @@ Neural Network
 
 
 Navigation concept reference:
+
 https://manu.ninja/webgl-three-js-annotations/
 
 Navigation to add:
@@ -19,5 +20,7 @@ What we’ve done
 
 
 Live example:
+
 http://imajinnation.432.co.za/
+
 http://imajinnation.432.co.za/Neural-Network/Neural-Network-Nav
