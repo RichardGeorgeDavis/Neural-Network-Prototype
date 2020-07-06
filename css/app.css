@@ -123,9 +123,9 @@ a, a:visited {
   }
 }
 
-/* .dg.ac, #stats {
+.dg.ac, #stats {
   display: none;
-} */
+}
 
 canvas {
   width: 100%;
