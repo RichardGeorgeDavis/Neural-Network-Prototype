@@ -300,8 +300,8 @@ function NeuralNetwork() {
     maxConnectionsPerNeuron: 6, //6
     signalMinSpeed: 1.75, // LC EDIT 2.3; source=0.035
     signalMaxSpeed: 3.25, // LC EDIT 5.0; source=0.065
-    currentMaxSignals: 3000, // LC EDIT orig=3000 //8000
-    limitSignals: 10000 // LC EDIT orig=10000 //12000
+    currentMaxSignals: 8000, // LC EDIT orig=3000 //8000
+    limitSignals: 12000 // LC EDIT orig=10000 //12000
 
 
     // verticesSkipStep: 2,
@@ -720,33 +720,20 @@ if (!Detector.webgl) {
 }
 
 var container, stats;
-var scene, light, camera, cameraCtrl, renderer, spriteBehindObject;
+var scene, light, camera, cameraCtrl, renderer;
 var WIDTH = window.innerWidth;
 var HEIGHT = window.innerHeight;
 var pixelRatio = window.devicePixelRatio || 1;
 var screenRatio = WIDTH / HEIGHT;
 var clock = new THREE.Clock();
 var FRAME_COUNT = 0;
-var annotation1; // Navigation
-var annotation2; // Navigation
-var annotation3; // Navigation
-var annotation4; // Navigation
-var annotation5; // Navigation
-var annotation6; // Navigation
-var annotation7; // Navigation
-var annotation8; // Navigation
-var annotation9; // Navigation
-var annotation10; // Navigation
-var annotation11; // Navigation
-// var annotation12; // Navigation
-var annotation13; // Navigation
 
 // ---- Settings
 var sceneSettings = {
 
   pause: false,
   bgColor: 0x027b76, // LC EDIT orig=0x111113
-  enableGridHelper: true, // LC EDIT FALSE
+  enableGridHelper: false, // LC EDIT FALSE
   enableAxisHelper: false
 
 };
@@ -756,10 +743,10 @@ container = document.getElementById('canvas-container');
 scene = new THREE.Scene();
 
 // ---- Camera
-camera = new THREE.PerspectiveCamera(75, screenRatio, 10, 2000); // LC EDIT orig=( 75, screenRatio, 10, 5000 ); was  75, screenRatio, 0.1, 2000 )
+camera = new THREE.PerspectiveCamera(25, screenRatio, 10, 5000); // LC EDIT orig=( 75, screenRatio, 10, 5000 ); was  75, screenRatio, 0.1, 2000 )
 // camera orbit control
 cameraCtrl = new THREE.OrbitControls(camera, container);
-cameraCtrl.object.position.y = 150; //zoom
+cameraCtrl.object.position.y = 150;
 cameraCtrl.update();
 
 // ---- Renderer
@@ -773,27 +760,14 @@ renderer.setPixelRatio(pixelRatio);
 renderer.autoClear = false;
 container.appendChild(renderer.domElement);
 
+
 // ---- Stats
 stats = new Stats();
 container.appendChild(stats.domElement);
 
-// ----Annotation // Navigation
-annotation1 = document.querySelector('.annotation1');
-annotation2 = document.querySelector('.annotation2');
-annotation3 = document.querySelector('.annotation3');
-annotation4 = document.querySelector('.annotation4');
-annotation5 = document.querySelector('.annotation5');
-annotation6 = document.querySelector('.annotation6');
-annotation7 = document.querySelector('.annotation7');
-annotation8 = document.querySelector('.annotation8');
-annotation9 = document.querySelector('.annotation9');
-annotation10 = document.querySelector('.annotation10');
-annotation11 = document.querySelector('.annotation11');
-// annotation12 = document.querySelector('.annotation12');
-annotation13 = document.querySelector('.annotation13');
-
 // ---- grid & axis helper
-var gridHelper = new THREE.GridHelper(600, 50, 0x00bbff, 0xffffff);
+var gridHelper = new THREE.GridHelper(600, 50);
+gridHelper.setColors(0x00bbff, 0xffffff);
 gridHelper.material.opacity = 0.1;
 gridHelper.material.transparent = true;
 gridHelper.position.y = -300;
@@ -914,34 +888,19 @@ function run() {
   renderer.clear();
   update();
   renderer.render(scene, camera);
-  // updateAnnotationOpacity(); // Navigation
-  updateScreenPositionAnnotation1(); // Navigation
-  updateScreenPositionAnnotation2(); // Navigation
-  updateScreenPositionAnnotation3(); // Navigation
-  updateScreenPositionAnnotation4(); // Navigation
-  updateScreenPositionAnnotation5(); // Navigation
-  updateScreenPositionAnnotation6(); // Navigation
-  updateScreenPositionAnnotation7(); // Navigation
-  updateScreenPositionAnnotation8(); // Navigation
-  updateScreenPositionAnnotation9(); // Navigation
-  updateScreenPositionAnnotation10(); // Navigation
-  updateScreenPositionAnnotation11(); // Navigation
-  // updateScreenPositionAnnotation12(); // Navigation
-  updateScreenPositionAnnotation13(); // Navigation
-
   stats.update();
   FRAME_COUNT++;
 
 }
 
-// var animate = function(){
-//             scene.rotation.x -= 0.001;
-// 						scene.rotation.y += 0.001;
-// 						scene.rotation.z -= 0.0005;
-//             renderer.render(scene,camera);
-//             requestAnimationFrame(animate);
-//           }
-//           animate();
+var animate = function(){
+            scene.rotation.x -= 0.001;
+						scene.rotation.y += 0.001;
+						scene.rotation.z -= 0.0005;
+            renderer.render(scene,camera);
+            requestAnimationFrame(animate);
+          }
+          animate();
 
 
 // Events --------------------------------------------------------
@@ -1002,212 +961,4 @@ function onWindowResize() {
 
 
 
-// ----  Navigation [ Annotations ]
-
-// function updateAnnotationOpacity() {
-//     const meshDistance = camera.position.distanceTo(mesh.position);
-//     const spriteDistance = camera.position.distanceTo(sprite.position);
-//     spriteBehindObject = spriteDistance > meshDistance;
-//     sprite.material.opacity = spriteBehindObject ? 0.25 : 1;
-//
-//     // Do you want a number that changes size according to its position?
-//     // Comment out the following line and the `::before` pseudo-element.
-//     sprite.material.opacity = 0;
-// }
-
-//Who we are
-function updateScreenPositionAnnotation1() {
-  const vector = new THREE.Vector3(0, 30, -35);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation1.style.top = `${vector.y}px`;
-  annotation1.style.left = `${vector.x}px`;
-  // annotation.style.opacity = spriteBehindObject ? 0.25 : 1;
-}
-//Where we come from
-function updateScreenPositionAnnotation2() {
-  const vector = new THREE.Vector3(-50, 0, -20);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation2.style.top = `${vector.y}px`;
-  annotation2.style.left = `${vector.x}px`;
-}
-//What we stand for
-function updateScreenPositionAnnotation3() {
-  const vector = new THREE.Vector3(-50, 0, 5);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation3.style.top = `${vector.y}px`;
-  annotation3.style.left = `${vector.x}px`;
-}
-//Where we want to go
-function updateScreenPositionAnnotation4() {
-  const vector = new THREE.Vector3(-50, 0, 30);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation4.style.top = `${vector.y}px`;
-  annotation4.style.left = `${vector.x}px`;
-}
-//What we do
-function updateScreenPositionAnnotation5() {
-  const vector = new THREE.Vector3(50, 0, -20);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation5.style.top = `${vector.y}px`;
-  annotation5.style.left = `${vector.x}px`;
-}
-//Where we do it
-function updateScreenPositionAnnotation6() {
-  const vector = new THREE.Vector3(50, 0, 5);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation6.style.top = `${vector.y}px`;
-  annotation6.style.left = `${vector.x}px`;
-}
-//How we do it
-function updateScreenPositionAnnotation7() {
-  const vector = new THREE.Vector3(50, 0, 35);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation7.style.top = `${vector.y}px`;
-  annotation7.style.left = `${vector.x}px`;
-}
-//Who we’ve worked for
-function updateScreenPositionAnnotation8() {
-  const vector = new THREE.Vector3(-30, 0, 60);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation8.style.top = `${vector.y}px`;
-  annotation8.style.left = `${vector.x}px`;
-}
-//What we’ve done
-function updateScreenPositionAnnotation9() {
-  const vector = new THREE.Vector3(30, 0, 60);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation9.style.top = `${vector.y}px`;
-  annotation9.style.left = `${vector.x}px`;
-}
-//Why Us
-function updateScreenPositionAnnotation10() {
-  const vector = new THREE.Vector3(0, 0, 5);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation10.style.top = `${vector.y}px`;
-  annotation10.style.left = `${vector.x}px`;
-}
-// Info left
-function updateScreenPositionAnnotation11() {
-  const vector = new THREE.Vector3(100, 30, 0);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation11.style.top = `${vector.y}px`;
-  annotation11.style.left = `${vector.x}px`;
-}
-// Info middle
-// function updateScreenPositionAnnotation12() {
-//   const vector = new THREE.Vector3(0, 30, 90);
-//   const canvas = renderer.domElement;
-//   const texture = new THREE.Texture( canvas );
-// texture.needsUpdate = true;
-//
-//   vector.project(camera);
-//
-//   vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-//   vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-//
-//   annotation12.style.top = `${vector.y}px`;
-//   annotation12.style.left = `${vector.x}px`;
-// }
-// Info right
-function updateScreenPositionAnnotation13() {
-  const vector = new THREE.Vector3(-100, 30, 0);
-  const canvas = renderer.domElement;
-  const texture = new THREE.Texture( canvas );
-texture.needsUpdate = true;
-
-  vector.project(camera);
-
-  vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
-  vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
-
-  annotation13.style.top = `${vector.y}px`;
-  annotation13.style.left = `${vector.x}px`;
-}
+// Number [ WebGL Annotations (three.js) ]--------------------------------------------------------
