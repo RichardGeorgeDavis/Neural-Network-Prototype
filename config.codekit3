@@ -37,13 +37,24 @@
 		},
 	"/css/app.css": {
 		"aP": 1,
-		"bl": 0,
+		"bl": 1,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/css/app-min.css",
 		"oF": 1,
-		"oS": 0
+		"oS": 3
+		},
+	"/Gruntfile.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/Gruntfile-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
 		},
 	"/index-worker.html": {
 		"cB": 1,
@@ -61,6 +72,17 @@
 		"oAP": "/index.html",
 		"oF": 0
 		},
+	"/js/axon.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/axon-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
 	"/js/build/app-bg-min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -72,15 +94,23 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/js/build/app-bg-min.js.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/js/build/app-bg-min.js.map",
+		"oF": 0
+		},
 	"/js/build/app-bg.js": {
 		"bF": 0,
 		"ft": 64,
-		"ma": 0,
+		"ma": 1,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/build/app-bg-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 0,
 		"tS": 0
 		},
 	"/js/build/app-min.js": {
@@ -94,15 +124,23 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/js/build/app-min.js.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/js/build/app-min.js.map",
+		"oF": 0
+		},
 	"/js/build/app.js": {
 		"bF": 0,
 		"ft": 64,
-		"ma": 0,
+		"ma": 1,
 		"mi": 1,
 		"oA": 0,
 		"oAP": "/js/build/app-min.js",
-		"oF": 0,
-		"sC": 3,
+		"oF": 1,
+		"sC": 0,
 		"tS": 0
 		},
 	"/js/build/three-app.js": {
@@ -110,9 +148,130 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/js/build/three-app-min.js",
-		"oF": 0,
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/events.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/events-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/gui.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/gui-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/loaders.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/loaders-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/main.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/main-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/neuralnet.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/neuralnet-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/neuron.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/neuron-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/particle.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/particle-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/particlePool.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/particlePool-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/run.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/run-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/scene.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/scene-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/signal.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/signal-min.js",
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
 		},
@@ -121,9 +280,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/js/vendor/dat.gui.min-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
 		},
@@ -132,9 +291,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/js/vendor/Detector-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
 		},
@@ -143,9 +302,20 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/js/vendor/jquery.min-min.js",
-		"oF": 0,
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/vendor/ndarray.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/vendor/ndarray-min.js",
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
 		},
@@ -154,9 +324,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/js/vendor/OBJLoader-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
 		},
@@ -165,9 +335,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/js/vendor/OrbitControls-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
 		},
@@ -176,9 +346,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/js/vendor/stats.min-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
 		},
@@ -187,9 +357,9 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/js/vendor/three-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
 		},
@@ -198,19 +368,60 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/js/vendor/underscore-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
 		},
-	"/js/vendor/vendor-merge.js": {
+	"/js/vendor/UVsDebug.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 1,
+		"oAP": "/js/vendor/UVsDebug-min.js",
+		"oF": 1,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/vendor/vendor-merge-min.js": {
 		"bF": 0,
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
+		"oAP": "/js/vendor/vendor-merge-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/vendor/vendor-merge-min.js.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/js/vendor/vendor-merge-min.js.map",
+		"oF": 0
+		},
+	"/js/vendor/vendor-merge.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 0,
 		"oAP": "/js/vendor/vendor-merge-min.js",
+		"oF": 1,
+		"sC": 0,
+		"tS": 0
+		},
+	"/js/vendor/vendor-merge.min copy.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/vendor/vendor-merge.min copy-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -220,19 +431,43 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/js/vendor/vendor-merge.min-min.js",
-		"oF": 0,
+		"oF": 1,
 		"sC": 3,
 		"tS": 0
+		},
+	"/LICENSE": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/LICENSE",
+		"oF": 1
 		},
 	"/models/brain_vertex_low.obj": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/models/brain_vertex_low.obj",
-		"oF": 0
+		"oF": 1
+		},
+	"/package-lock.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/package-lock-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/package-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
 		},
 	"/README.md": {
 		"cB": 0,
@@ -243,9 +478,9 @@
 		"eSQ": 1,
 		"ft": 4096,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/README.html",
-		"oF": 0,
+		"oF": 1,
 		"oFM": 0,
 		"oS": 0,
 		"pHT": 0,
@@ -257,42 +492,42 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/shaders/axon.frag",
-		"oF": 0
+		"oF": 1
 		},
 	"/shaders/axon.vert": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/shaders/axon.vert",
-		"oF": 0
+		"oF": 1
 		},
 	"/shaders/neuron.frag": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/shaders/neuron.frag",
-		"oF": 0
+		"oF": 1
 		},
 	"/shaders/neuron.vert": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/shaders/neuron.vert",
-		"oF": 0
+		"oF": 1
 		},
 	"/sprites/electric.png": {
 		"ft": 32768,
 		"iS": 716,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/sprites/electric.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oF": 1,
+		"oIPL": 1,
+		"opt": 1,
 		"oT": 1,
 		"q": 100
 		}

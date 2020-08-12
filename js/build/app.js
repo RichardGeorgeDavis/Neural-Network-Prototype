@@ -793,7 +793,8 @@ annotation11 = document.querySelector('.annotation11');
 annotation13 = document.querySelector('.annotation13');
 
 // ---- grid & axis helper
-var gridHelper = new THREE.GridHelper(600, 50, 0x00bbff, 0xffffff);
+var gridHelper = new THREE.GridHelper(600, 50);
+gridHelper.setColors(0x00bbff, 0xffffff);
 gridHelper.material.opacity = 0.1;
 gridHelper.material.transparent = true;
 gridHelper.position.y = -300;
