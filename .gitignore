@@ -1,0 +1,11 @@
+# macOS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+# Google Drive / macOS custom folder icons
+Icon?
