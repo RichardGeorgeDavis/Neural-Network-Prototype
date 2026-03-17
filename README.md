@@ -1,3 +1,7 @@
+<!-- workspace-hub:cover:start -->
+![Neural Network Prototype cover](cover.png)
+<!-- workspace-hub:cover:end -->
+
 Neural Network
 ==============
 
